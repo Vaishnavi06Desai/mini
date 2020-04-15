@@ -1,94 +1,33 @@
-*{    
-    font-family: Cambria;
-}
-
-.cont_all{
-    background-color: rgb(240,240,240);
-    justify-content: space-between;
-    padding: 10px;
-}
-.NumQues{
-    background-color: rgb(39, 104, 202); 
-    border: none;
-    color: white;
-    text-align: left;
-    margin: 50px 20px;
-    font-size: 200%;
-    border-radius: 10px;
-    padding: 50px 20px;
-    box-shadow: 3px 3px 2px rgb(3, 22, 51);
-    display: flex;
-    justify-content: space-between;
-}
-
-.displayQues{
-    background-color: rgb(250,250,250);
-    border: none;
-    color: black;
-    text-align: center;
-    margin: 50px 20px;
-    font-size: 200%;
-    border-radius: 10px;
-    padding: 50px 20px;
-    box-shadow: 0 0 5px rgb(151, 149, 149);
-}
-
-.options{
-    margin: 150px 50px 50px 50px;
-}
-
-.divide{
-    display: flex;
-    justify-content: space-between;
-}
-
-.button{
-    background-color: rgb(39, 104, 202); 
-    border: none;
-    color: white;
-    padding: 10px 30px 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 1px;
-    border-radius: 12px;
-    cursor: pointer;
-    box-shadow: 3px 3px 2px rgb(3, 22, 51);
+img{
+    position: absolute;
+    clip: rect(auto,auto,650px,auto);
 }
 
 
-.divide input[type = "radio"]{display: none;}
 
-.dc{
-    background-color: rgb(39, 104, 202); 
-    border: none;
-    color: white;
-    flex-basis: 45%;
-    padding: 10px 30px 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 60%;
-    margin: 20px 0px;
-    border-radius: 12px;
-    cursor: pointer;
-    
+.top-left {
+    position: relative;
+    top: 18px;
+    left: 20px;
 }
 
-.timer{
-    background-color: rgb(139, 185, 255); 
-    border: none;
-    color: black;
-    padding: 10px 30px 10px 30px;
-    text-align: right;
-    font-size: 50%;
-    margin: 10px 1px;
-    border-radius: 12px;
-    box-shadow: 3px 3px 2px rgb(3, 22, 51);
-    font-weight: bold;
-}
-.divide input:checked + .dc{
-    background-color: rgb(136, 183, 255);
+.top-middle{
+    position: relative;
+    top: 25px;
+    left:20px;
 }
 
+ .bottom-middle {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+ }
+
+ .bottom-center {
+    position: relative;
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+ }
+  

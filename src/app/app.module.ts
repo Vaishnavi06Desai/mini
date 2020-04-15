@@ -13,12 +13,13 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
-import { HomeService } from './home/home.service';
 import { AuthService } from './auth/auth.service';
 import { map } from 'rxjs/operators';
 import { EntryQuestionsComponent } from './entry-questions/entry-questions.component';
 import { EntryQuestionsService } from './entry-questions/entry-questions.service';
 import { TestInterfaceComponent } from './test-interface/test-interface.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import { TestInterfaceComponent } from './test-interface/test-interface.componen
     LoginComponent,
     HomeComponent,
     EntryQuestionsComponent,
-    TestInterfaceComponent
+    TestInterfaceComponent,
+    NavbarComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,7 @@ import { TestInterfaceComponent } from './test-interface/test-interface.componen
     AngularFireAuthModule, // Only required for auth features,
     AngularFireStorageModule // Only required for storage features
   ],
-  providers: [HomeService, AuthService, EntryQuestionsService, TestInterfaceComponent],
+  providers: [AuthService, EntryQuestionsService, TestInterfaceComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,103 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { map } from 'rxjs/operators';
-import { User } from 'firebase';
-import { HomeService } from './home.service';
-import { question_interface } from '../interface/question_interface';
-import { FormGroup, FormControl } from '@angular/forms';
-import { pipe } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-
 export class HomeComponent implements OnInit {
 
-  id;
-  x: number;
-  answer;
-  difficulty;
-  correct:number;
-  timeLeft: number = 5;
-  interval;
-  min:number;
-  secs:number;
-  questions: question_interface = { Question: '', Difficulty: 0 };
-  constructor(private db: AngularFirestore,
-    private hs: HomeService) {
-      this.x = 1;
-      this.correct = 0;
-      this.hs.onStart().subscribe(res =>  res.map(a => {if(this.x == 1) {hs.updateinit(a)}}) )
+  user: firebase.User;
+
+  constructor(private auth: AuthService, 
+    private router: Router) { }
+
+  ngOnInit() {
+    this.auth.getUserState()
+      .subscribe( user => {
+        this.user = user;
+      })
   }
 
-  ngOnInit(): void {
-    this.getQuestion();
-    this.startTimer();
+  login() {
+    this.router.navigate(['/login']);
   }
 
-  form = new FormGroup({
-    options: new FormControl(''),
-  });
-
-  getQuestion = () => {
-    //this.hs.getQuestion().subscribe(res => pipe(a => {this.questions = a; return this.questions[0]}));
-    //this.hs.getQuestion().subscribe(res =>{this.questions = res; console.log(this.questions[this.random(this.questions.length)].payload.doc.data().Qes);});
-    //this.hs.getQuestion().pipe(map(res => res.map(a => {const quest = a.payload.doc.data(); return {quest}}))).subscribe(item => {item.forEach(i => {this.questions.push(i);});});
-    //this.hs.getQuestion().pipe(map(res => res.map(a => { return a;}))).subscribe(res => (this.questions = res));
-    this.hs.getQuestions_().subscribe(
-        (res => { this.questions = res[0]; this.id = res[1]; console.log(res[1]); this.answer = this.questions.Answer; console.log(this.answer); this.difficulty = this.questions.Difficulty; console.log(this.difficulty);})
-      );      
+  logout() {
+    this.auth.logout();
   }
 
-  random(a) {
-    return Math.floor(Math.random() * a);
+  register() {
+    this.router.navigate(['/register']);
   }
 
-  update(id)
-  {
-    //this.hs.update(id);
-    this.x++;
+  questions(){
+    this.router.navigate(['/questions']);
   }
 
-  onSubmit()
-  {
-    this.x++;
-    console.log("In here");
-    console.log(this.answer);
-    console.log(this.form.value.options);
-   if(this.answer == this.form.value.options)
-   {
-    console.log("Correct!");
-      this.correct++;
-      if (this.difficulty != 3)
-        {this.difficulty++;}     
-   } 
-   else{
-     if(this.difficulty != 1)
-      {this.difficulty--;}
-   }
-
-   if(this.x != 11)
-   {
-    this.hs.update(this.id, this.difficulty);
-   }
-
-   this.form.controls['options'].reset();
- }
-
- startTimer() {
-  this.interval = setInterval(() => {
-    if(this.timeLeft >= 0) {
-      this.min=Math.trunc(this.timeLeft/60);
-      this.secs=Math.trunc(this.timeLeft%60);
-      this.timeLeft--;
-    } else {
-      //this.timeLeft = 60;
-    }
-  },1000)
+  test(){
+    this.router.navigate(['/test']);
+  }
 }
-
-}
-

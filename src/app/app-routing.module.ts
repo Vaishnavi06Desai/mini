@@ -5,6 +5,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { HomeComponent } from './home/home.component';
 import { EntryQuestionsComponent } from './entry-questions/entry-questions.component';
 import { TestInterfaceComponent } from './test-interface/test-interface.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 const routes: Routes = [
@@ -29,8 +30,12 @@ const routes: Routes = [
     component: TestInterfaceComponent
   },
   {
+    path: 'aboutus',
+    component: AboutUsComponent
+  },
+  {
     path :'',
-    redirectTo: '/test',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
 ];

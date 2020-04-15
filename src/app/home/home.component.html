@@ -1,45 +1,16 @@
-<div class="cont_all" *ngIf="x != 10 && !(min == 0 && secs == 0); else elseBlock">
-   <div class="NumQues">
-      Question {{ x }} of 10
-      <div class="timer">
-         Timer: {{ min }} : {{ secs }}
-      </div>
+<div>
+   <img align="center" src="https://thumbs.dreamstime.com/z/online-test-concept-quiz-computer-education-learning-digital-device-vector-illustration-cartoon-style-141700495.jpg" width="1080" height="720" alt="Test">
+<div class="top-left"><h4 class="mt-4">Home Page</h4></div>
+ 
+<div *ngIf="user" class="top-middle">Logged in as: {{ user?.email }} - {{ user?.displayName }}</div>
 
-   </div>
+<button class="btn btn-primary mr-2 bottom-middle" *ngIf="!user" (click)="register()">Register</button>
+<button class="btn btn-primary bottom-center" *ngIf="!user" (click)="login()">Login</button>
+<p>
+<button class="btn btn-warning mr-5 bottom-middle" *ngIf="user" (click)="questions()" >Submit Questions</button>
+<button class="btn btn-warning bottom-center" *ngIf="user" (click)="test()" >Answer Test</button>
+</p>
 
-   <div class="displayQues">
-      {{ questions.Question }}
-      <form [formGroup]="this.form">
-         <div class="options">
-            <div class="divide">
-               <input type="radio" formControlName="options" value="A" id="A" class="dc">
-               <label class="dc" for="A">{{ questions.Option_A }}</label>
-               <input type="radio" formControlName="options" value="B" id="B" class="dc">
-               <label class="dc" for="B">{{ questions.Option_B }}</label>
-            </div>
-            <div class="divide">
-               <input type="radio" formControlName="options" value="C" id="C" class="dc">
-               <label class="dc" for="C">{{ questions.Option_C }}</label>
-               <input type="radio" formControlName="options" value="D" id="D" class="dc">
-               <label class="dc" for="D">{{ questions.Option_D }}</label>
-            </div>
-         </div>
-      </form>
-      <div class="button" (click)="onSubmit()">
-         Submit
-      </div>
-   </div>
+<!--<button class="btn btn-primary" *ngIf="user" (click)="logout()">Logout</button>-->
+
 </div>
-
-
-<ng-template #elseBlock class="cont_all">
-   <div class="cont_all">
-      <div class="NumQues">
-         Test Over
-      </div>
-
-      <div class="displayQues">
-         You got {{ correct }} out of 10 questions correct!
-      </div>
-   </div>
-</ng-template>
