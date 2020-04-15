@@ -43,4 +43,16 @@ export class EntryQuestionsComponent implements OnInit {
     this.eq.delete(data);
   }
 
+  edit(data)
+  {
+    this.eq.form.get('Question').setValue(data.payload.doc.data().Question);
+    this.eq.form.get('Answer').setValue(data.payload.doc.data().Answer);
+    this.eq.form.get('Option_A').setValue(data.payload.doc.data().Option_A);
+    this.eq.form.get('Option_B').setValue(data.payload.doc.data().Option_B);
+    this.eq.form.get('Option_C').setValue(data.payload.doc.data().Option_C);
+    this.eq.form.get('Option_D').setValue(data.payload.doc.data().Option_D);
+    this.eq.form.get('Difficulty').setValue(data.payload.doc.data().Difficulty);
+    this.delete(data);
+  }
+
 }

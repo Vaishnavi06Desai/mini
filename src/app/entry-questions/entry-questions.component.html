@@ -21,6 +21,7 @@
             <div class="others">{{ order.payload.doc.data().Option_C }}</div>
             <div class="others">{{ order.payload.doc.data().Option_D }}</div>
             <div class="others">{{ order.payload.doc.data().Difficulty }}</div>
+            <div class="icon" (click)="edit(order)"> &#9998;</div>
             <div class="icon" (click)="delete(order)"> &#10008;</div>
         </div>
     </div>

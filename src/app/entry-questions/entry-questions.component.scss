@@ -36,7 +36,7 @@ h1{
 }
 
 .question{
-    flex-basis:35%;
+    flex-basis:30%;
 }
 
 .others{
@@ -58,6 +58,7 @@ h1{
 .question, .others, .icon{
     padding: 10px;
     box-sizing: border-box;
+    font-family: Cambria;
 }
 
 .icon:hover{
@@ -95,4 +96,15 @@ h1{
 .button:active{
     background-color:rgb(55, 127, 235);
     box-shadow: none;
+}
+
+input{
+    flex:enabled;
+}
+
+input.question{
+    flex: 30
+}
+input.others{
+    flex: 1
 }
