@@ -4,6 +4,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { EntryQuestionsComponent } from './entry-questions/entry-questions.component';
+import { TestInterfaceComponent } from './test-interface/test-interface.component';
 
 
 const routes: Routes = [
@@ -24,8 +25,12 @@ const routes: Routes = [
     component: EntryQuestionsComponent
   },
   {
+    path: 'test',
+    component: TestInterfaceComponent
+  },
+  {
     path :'',
-    redirectTo: '/questions',
+    redirectTo: '/test',
     pathMatch: 'full'
   },
 ];

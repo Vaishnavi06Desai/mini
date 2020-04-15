@@ -1,19 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { TestInterfaceService } from './test-interface.service';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { map } from 'rxjs/operators';
-import { User } from 'firebase';
-import { HomeService } from './home.service';
 import { question_interface } from '../interface/question_interface';
 import { FormGroup, FormControl } from '@angular/forms';
-import { pipe } from 'rxjs';
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-test-interface',
+  templateUrl: './test-interface.component.html',
+  styleUrls: ['./test-interface.component.scss']
 })
-
-export class HomeComponent implements OnInit {
+export class TestInterfaceComponent implements OnInit {
 
   id;
   x: number;
@@ -26,10 +21,10 @@ export class HomeComponent implements OnInit {
   secs:number;
   questions: question_interface = { Question: '', Difficulty: 0 };
   constructor(private db: AngularFirestore,
-    private hs: HomeService) {
+    private ts: TestInterfaceService) {
       this.x = 1;
       this.correct = 0;
-      this.hs.onStart().subscribe(res =>  res.map(a => {if(this.x == 1) {hs.updateinit(a)}}) )
+      this.ts.onStart().subscribe(res =>  res.map(a => {if(this.x == 1) {ts.updateinit(a)}}) )
   }
 
   ngOnInit(): void {
@@ -42,31 +37,18 @@ export class HomeComponent implements OnInit {
   });
 
   getQuestion = () => {
-    //this.hs.getQuestion().subscribe(res => pipe(a => {this.questions = a; return this.questions[0]}));
-    //this.hs.getQuestion().subscribe(res =>{this.questions = res; console.log(this.questions[this.random(this.questions.length)].payload.doc.data().Qes);});
-    //this.hs.getQuestion().pipe(map(res => res.map(a => {const quest = a.payload.doc.data(); return {quest}}))).subscribe(item => {item.forEach(i => {this.questions.push(i);});});
-    //this.hs.getQuestion().pipe(map(res => res.map(a => { return a;}))).subscribe(res => (this.questions = res));
-    this.hs.getQuestions_().subscribe(
+    //this.ts.getQuestion().subscribe(res => pipe(a => {this.questions = a; return this.questions[0]}));
+    //this.ts.getQuestion().subscribe(res =>{this.questions = res; console.log(this.questions[this.random(this.questions.length)].payload.doc.data().Qes);});
+    //this.ts.getQuestion().pipe(map(res => res.map(a => {const quest = a.payload.doc.data(); return {quest}}))).subscribe(item => {item.forEach(i => {this.questions.push(i);});});
+    //this.ts.getQuestion().pipe(map(res => res.map(a => { return a;}))).subscribe(res => (this.questions = res));
+    this.ts.getQuestions_().subscribe(
         (res => { this.questions = res[0]; this.id = res[1]; console.log(res[1]); this.answer = this.questions.Answer; console.log(this.answer); this.difficulty = this.questions.Difficulty; console.log(this.difficulty);})
       );      
-  }
-
-  random(a) {
-    return Math.floor(Math.random() * a);
-  }
-
-  update(id)
-  {
-    //this.hs.update(id);
-    this.x++;
   }
 
   onSubmit()
   {
     this.x++;
-    console.log("In here");
-    console.log(this.answer);
-    console.log(this.form.value.options);
    if(this.answer == this.form.value.options)
    {
     console.log("Correct!");
@@ -81,7 +63,7 @@ export class HomeComponent implements OnInit {
 
    if(this.x != 11)
    {
-    this.hs.update(this.id, this.difficulty);
+    this.ts.update(this.id, this.difficulty);
    }
 
    this.form.controls['options'].reset();
@@ -99,5 +81,5 @@ export class HomeComponent implements OnInit {
   },1000)
 }
 
-}
 
+}

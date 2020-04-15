@@ -18,6 +18,7 @@ import { AuthService } from './auth/auth.service';
 import { map } from 'rxjs/operators';
 import { EntryQuestionsComponent } from './entry-questions/entry-questions.component';
 import { EntryQuestionsService } from './entry-questions/entry-questions.service';
+import { TestInterfaceComponent } from './test-interface/test-interface.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { EntryQuestionsService } from './entry-questions/entry-questions.service
     RegistrationComponent,
     LoginComponent,
     HomeComponent,
-    EntryQuestionsComponent
+    EntryQuestionsComponent,
+    TestInterfaceComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,7 @@ import { EntryQuestionsService } from './entry-questions/entry-questions.service
     AngularFireAuthModule, // Only required for auth features,
     AngularFireStorageModule // Only required for storage features
   ],
-  providers: [HomeService, AuthService, EntryQuestionsService],
+  providers: [HomeService, AuthService, EntryQuestionsService, TestInterfaceComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
