@@ -1,33 +1,125 @@
-img{
-    position: absolute;
-    clip: rect(auto,auto,650px,auto);
+.container_{
+    display: flex;
+    flex-direction: column;
+    
+}
+.cont_all{
+    background-image:url("https://firebasestorage.googleapis.com/v0/b/mini-proj-48d60.appspot.com/o/pic2.png?alt=media&token=147119e3-bddf-4636-9203-91164b8c152d");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    flex: 1;
 }
 
-
-
-.top-left {
-    position: relative;
-    top: 18px;
-    left: 20px;
+.next{
+    background-image:url("https://firebasestorage.googleapis.com/v0/b/mini-proj-48d60.appspot.com/o/pic3.png?alt=media&token=6b4dd00e-3874-4567-a075-f40f8a96b448");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    flex: 1;
 }
 
-.top-middle{
-    position: relative;
-    top: 25px;
-    left:20px;
+.home{
+    display:flex;
+    justify-content: space-between;
+}.home1{
+    flex-basis: 75%;
+    font-size: 100%;
+    margin: 5px;
+    font-family: Cambria;
+}.home2{
+    flex-basis: 25%;
+    font-family: Cambria;
 }
 
- .bottom-middle {
-    position: absolute;
-    top: 70%;
-    left: 10%;
- }
+.console{
+    width: 50%;
+    margin: 10% 0 0 5%;
+    align-content: left;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-family: Cambria;
+}
 
- .bottom-center {
-    position: relative;
-    top: 70%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
- }
+.name{
+    font-size: 1050%;
+    text-shadow: 10px 10px 5px gray;
+    flex-basis: 60%;
+}
+.purpose{
+    font-size: 250%;
+    flex-basis: 10%;
+    background-color: rgba(255, 255, 255, 0.589);
+    padding:0 2%;
+}
+
+.getStarted{
+    background-color: rgb(0, 0, 0); 
+    border: none;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    text-align: center;
+    font-size: 150%;
+    margin: 10% 0 1% 21%;
+    border-radius: 12px;
+    flex-basis: 10%;
+    width: fit-content;
+    height: fit-content;
+}
+
+.place_buttons{
+    display: flex;
+    width: 60%;
+    margin: 0 0 1% 1%;
+    justify-content: space-between;
+    font-size: 150%;
+}
+
+.button1, .button2{
+    flex-basis: 40%;
+    background-color: rgb(255,201,14);
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px rgb(204, 163, 14);
+}
+
+.button1:hover, .button2:hover{
+    background-color: rgb(255, 211, 53);
+}
+
+.button1:active, .button2:active{
+    box-shadow: none;
+    background-color: rgb(204, 163, 14);
+}
+
+.instructions{
+    flex: 1;
+    margin: 50px 20%;
+    padding: 20px 2%;
+    background-color: rgba(136, 195, 255, 0.589);
+    font-family: Cambria;
+    text-align: center;
+    box-shadow: 3px 3px 1px rgba(77, 165, 253, 0.295);
+}
+
+.heading{
+    font-size: 250%;
+    font-weight: bold;
+}
+
+.points{
+    font-size: 150%;
+}
+
+.instruction_points{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
   
+.icon{
+    font-size: 200%;
+}

@@ -1,33 +1,37 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-primary mb4">
-    <div class="container">
-        <a routerLink="/"  class="navbar-brand"><i class="fa fa-graduation-cap"></i>Adaptive Testing</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarMain">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a routerLink="/" class="nav-link">Dashboard</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto" >
-            
-                <li class="nav-item"  >
-                    <a routerLink="/aboutUs" class="nav-link text-warning"><i class="fa fa-group"></i>About Us</a>
-                </li>
-                
-                <li class="nav-item" *ngIf= "!user">
-                    <a routerLink="/register" class="nav-link text-warning"><i class="fa fa-address-card"></i>Register</a>
-                </li>
-                
-                <li class="nav-item" *ngIf="!user" >
-                    <a routerLink="/login" class="nav-link text-warning"><i class="fa fa-lock"></i>Login</a>
-                </li>
-               
-                <button class="btn btn-primary text-warning" *ngIf="user" (click)="logout()" ><i class="fa fa-sign-in"></i>Logout</button>
-            
-            </ul>
-        </div>
+    <nav class="navbar navbar-expand-md navbar-custom">
 
-    </div>
-</nav>
+            <div class="item1">
+                <a routerLink="/" class="navbar-brand"><i class="fa fa-graduation-cap"></i>Adaptive Testing</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a routerLink="/" class="nav-link">Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item2">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a routerLink="/aboutus" class="button"><i class="fa fa-group"></i>About Us</a>
+                    </li>
+
+                    <li class="nav-item" *ngIf="!user">
+                        <a routerLink="/register" class="button"><i class="fa fa-address-card"></i>Register</a>
+                    </li>
+
+                    <li class="nav-item" *ngIf="!user">
+                        <a routerLink="/login" class="button"><i class="fa fa-lock"></i>Login</a>
+                    </li>
+
+                    <div class="button" *ngIf="user" (click)="logout()"><i
+                            class="fa fa-sign-in"></i>Logout</div>
+
+                </ul>
+            </div>
+ 
+    </nav>

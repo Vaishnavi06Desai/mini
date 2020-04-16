@@ -21,7 +21,6 @@ import { TestInterfaceComponent } from './test-interface/test-interface.componen
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

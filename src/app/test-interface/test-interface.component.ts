@@ -15,7 +15,7 @@ export class TestInterfaceComponent implements OnInit {
   answer;
   difficulty;
   correct:number;
-  timeLeft: number = 5;
+  timeLeft: number = 600;
   interval;
   min:number;
   secs:number;

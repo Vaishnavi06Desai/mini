@@ -1,16 +1,33 @@
-<div>
-   <img align="center" src="https://thumbs.dreamstime.com/z/online-test-concept-quiz-computer-education-learning-digital-device-vector-illustration-cartoon-style-141700495.jpg" width="1080" height="720" alt="Test">
-<div class="top-left"><h4 class="mt-4">Home Page</h4></div>
- 
-<div *ngIf="user" class="top-middle">Logged in as: {{ user?.email }} - {{ user?.displayName }}</div>
-
-<button class="btn btn-primary mr-2 bottom-middle" *ngIf="!user" (click)="register()">Register</button>
-<button class="btn btn-primary bottom-center" *ngIf="!user" (click)="login()">Login</button>
-<p>
-<button class="btn btn-warning mr-5 bottom-middle" *ngIf="user" (click)="questions()" >Submit Questions</button>
-<button class="btn btn-warning bottom-center" *ngIf="user" (click)="test()" >Answer Test</button>
-</p>
-
-<!--<button class="btn btn-primary" *ngIf="user" (click)="logout()">Logout</button>-->
-
+<div class="container_">
+   <div class="cont_all">
+      <div class="home">
+         <div class="home1"> <i class="fa fa-home"></i> Home Page</div>
+         <div *ngIf="user" class="home2"><i class="fa fa-user"></i>Logged in as: {{ user?.email }} -
+            {{ user?.displayName }}</div>
+      </div>
+      <div class="console">
+         <div class="name"> Adasys </div>
+         <div class="purpose">A system for conducting adaptive examinations</div>
+         <div class="getStarted">Get Started</div>
+         <div class="place_buttons">
+            <button class="button1" *ngIf="!user" (click)="register()">Register</button>
+            <button class="button2" *ngIf="!user" (click)="login()">Login</button>
+            <button class="button1" *ngIf="user" (click)="questions()">Submit Questions</button>
+            <button class="button2" *ngIf="user" (click)="test()">Answer Test</button>
+         </div>
+      </div>
+   </div>
+   <div class="next">
+      <div class="instructions">
+         <div class="heading">
+            <div class="icon"><i class="fa fa-cogs"></i></div>How the system works:
+         </div>
+         <div class="points">
+            &#8226; Register yourself using an email.<br>
+            &#8226; Login to the system.<br>
+            &#8226; To enter questions to the database, click on Submit Questions.<br>
+            &#8226; To give examination, click on Answer Test.
+         </div>
+      </div>
+   </div>
 </div>

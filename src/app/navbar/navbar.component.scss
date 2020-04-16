@@ -1,0 +1,48 @@
+.navbar-custom{
+    background-color: rgb(63, 72, 204);
+    width: 100%;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    color: white;
+    font-family: Cambria;
+}
+
+.navbar-custom .nav-link:hover{
+    color: rgb(63, 72, 204);
+}
+
+.navbar-custom .navbar-brand:hover{
+    color: rgb(63, 72, 204);
+}
+
+.navbar-custom .navbar-brand{
+    color: white;
+}
+
+.navbar-custom .nav-link{
+    color: white;
+}
+
+.navbar-custom:hover{
+    background-color: rgb(65, 78, 255);
+}
+
+.item2{
+    display: flex;
+    flex-basis: 80%;
+}.item1{
+    flex-basis: 50%;
+    display: flex;
+}
+
+.button{
+    color: rgb(255,201,14);
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.button:hover{
+    color: rgb(204, 163, 14);
+}
