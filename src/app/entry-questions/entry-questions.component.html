@@ -1,5 +1,23 @@
 <div class="contain_all">
 
+    <form [formGroup]="this.eq.form">
+        <div class="row">
+            <input placeholder="Question" formControlName="Question" type="text" class="question1">
+            <input placeholder="Answer" formControlName="Answer" type="text" class="others">
+            <input placeholder="Option A" formControlName="Option_A" type="text" class="others">
+            <input placeholder="Option B" formControlName="Option_B" type="text" class="others">
+            <input placeholder="Option C" formControlName="Option_C" type="text" class="others">
+            <input placeholder="Option D" formControlName="Option_D" type="text" class="others">
+            <input placeholder="Difficulty" formControlName="Difficulty" type="number" class="others">
+        </div>
+    </form>
+
+    <form [formGroup]="this.eq.form">
+        <div class="button" (click)="onSubmit()">
+            Submit
+        </div>
+    </form>
+
     <div class="cont" *ngFor="let order of questions">
         <div class="row">
             <div class="question">{{ order.payload.doc.data().Question }}</div>
@@ -13,24 +31,4 @@
             <div class="icon" (click)="delete(order)"> &#10008;</div>
         </div>
     </div>
-
-
-
-    <form [formGroup]="this.eq.form">
-        <div class="row">
-            <input placeholder="Question" formControlName="Question" type="text" class="question">
-            <input placeholder="Answer" formControlName="Answer" type="text" class="others">
-            <input placeholder="Option A" formControlName="Option_A" type="text" class="others">
-            <input placeholder="Option B" formControlName="Option_B" type="text" class="others">
-            <input placeholder="Option C" formControlName="Option_C" type="text" class="others">
-            <input placeholder="Option D" formControlName="Option_D" type="text" class="others">
-            <input placeholder="Difficulty" formControlName="Difficulty" type="number" class="others">
-        </div>
-    </form>
 </div>
-
-<form [formGroup]="this.eq.form">
-    <div class="button" (click)="onSubmit()">
-        Submit
-    </div>
-</form>

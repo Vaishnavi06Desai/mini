@@ -4,7 +4,7 @@ body{
 }
 *{
     box-sizing: border-box;
-    font-family: Cambria;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 h1{
@@ -37,6 +37,10 @@ h1{
 
 .question{
     flex-basis:30%;
+}
+
+.question1{
+    flex-basis:100%;
 }
 
 .others{

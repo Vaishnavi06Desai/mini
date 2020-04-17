@@ -46,3 +46,72 @@
 .button:hover{
     color: rgb(204, 163, 14);
 }
+
+@media(max-width: 700px) {
+
+    .navbar-custom{
+        background-color: rgb(63, 72, 204);
+        width: 105%;
+        padding: 0px 30px;
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    .navbar-custom .nav-link:hover{
+        color: rgb(63, 72, 204);
+    }
+    
+    .navbar-custom .navbar-brand:hover{
+        color: rgb(63, 72, 204);
+    }
+    
+    .navbar-custom .navbar-brand{
+        color: white;
+        font-size: 70%;
+    }
+    
+    .navbar-custom .nav-link{
+        color: white;
+    }
+    
+    .navbar-custom:hover{
+        background-color: rgb(65, 78, 255);
+    }
+    
+    .item2{
+        display: flex;
+        flex-basis: 30%;
+        font-size: 50%;
+    }.item1{
+        flex-basis: 70%;
+        display: flex;
+        font-size: 100%;
+    }
+
+    .navbar-custom .navbar-nav{
+        display: flex;
+        float: left;
+    }
+
+    .navbar-custom .nav-item{
+        float: left;
+    }
+
+   ul{
+       float: left;
+   }
+    
+    .button{
+        color: rgb(255,201,14);
+        padding: 0 20px;
+        cursor: pointer;
+        //flex-basis: 50%;
+    }
+    
+    .button:hover{
+        color: rgb(204, 163, 14);
+    }
+
+}
