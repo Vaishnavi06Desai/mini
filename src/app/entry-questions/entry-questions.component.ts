@@ -10,6 +10,7 @@ import { rejects } from 'assert';
 export class EntryQuestionsComponent implements OnInit {
 
   questions;
+  err: number = 0;
   constructor(public eq: EntryQuestionsService) { }
 
   ngOnInit(): void {
@@ -19,7 +20,7 @@ export class EntryQuestionsComponent implements OnInit {
   onSubmit(){
     let data = this.eq.form.value;
 
-    this.eq.updateQuestions(data).then(res => {console.log(res); this.clear();}, err => console.log(err));
+    this.eq.updateQuestions(data).then(res => {console.log(res); this.clear();}, err => {console.log(err); this.err = 1});
   }
 
   getQuestion()

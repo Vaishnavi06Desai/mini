@@ -101,6 +101,7 @@
     background-color: rgba(136, 195, 255, 0.589);
     font-family: Cambria;
     text-align: center;
+    align-self: center;
     box-shadow: 3px 3px 1px rgba(77, 165, 253, 0.295);
 }
 
@@ -147,6 +148,10 @@
         height: 600px;
         background-repeat: no-repeat;
         flex: 1;
+        padding: 0 0 10% 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     
     .home{
@@ -239,11 +244,13 @@
     }
     
     .instructions{
-        margin: 50px 20%;
+        margin: 50px 0;
         padding: 20px 2%;
         background-color: rgba(136, 195, 255, 0.589);
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         text-align: center;
+        width: 90%;
+        align-self: center;
         box-shadow: 3px 3px 1px rgba(77, 165, 253, 0.295);
     }
     
